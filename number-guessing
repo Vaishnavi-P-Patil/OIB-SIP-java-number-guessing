@@ -1,0 +1,42 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner reader=new Scanner(System.in);
+ String play="yes";
+ while(play.equals("yes"))
+{
+Random rand=new Random();
+int randNum=rand.nextInt(100);
+int guess=-1;
+int tries=0;
+while (guess!=randNum)
+{
+System.out.println("Guess a number from 1 to 100 ");
+guess=reader.nextInt();
+tries++;
+
+if(guess==randNum)
+{
+System.out.println("Great..! You Won");
+System.out.println("It only took "+tries+"attempts");
+System.out.println("Would you like continue game...? Yes or No -:");
+play=reader.next().toLowerCase();
+}
+else if(guess>randNum)
+{
+System.out.println("Too high.....");
+}
+else
+{
+System.out.println("Too Low......");
+}
+}
+
+reader.close();
+}
+}
+}
